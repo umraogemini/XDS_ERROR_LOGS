@@ -4,47 +4,47 @@ terraform {
   required_providers {
     google = {
       source  = "hashicorp/google"
-      version = "5.13.0"
+      version = ">= 5.10.0"
     }
     google-beta = {
       source  = "hashicorp/google-beta"
-      version = "5.13.0"
+      version = ">= 5.10.0"
     }
     tls = {
       source  = "hashicorp/tls"
-      version = "4.0.6"
+      version = ">= 4.0.0"
     }
     http = {
       source  = "hashicorp/http"
-      version = "3.4.5"
+      version = ">= 3.0.0"
     }
     random = {
       source  = "hashicorp/random"
-      version = "3.7.1"
+      version = ">= 3.0.0"
     }
     time = {
       source  = "hashicorp/time"
-      version = "0.12.1"
+      version = ">= 0.12.0"
     }
     external = {
       source  = "hashicorp/external"
-      version = "2.3.4"
+      version = ">= 2.3.0"
     }
     null = {
       source  = "hashicorp/null"
-      version = "3.2.3"
+      version = ">= 3.2.0"
     }
     local = {
       source  = "hashicorp/local"
-      version = "2.5.2"
+      version = ">= 2.2.0"
     }
     archive = {
       source  = "hashicorp/archive"
-      version = "2.7.0"
+      version = ">= 2.3.0"
     }
     venafi = {
-      source  = "registry.terraform.io/Venafi/venafi"
-      version = "0.21.2"
+      source  = "Venafi/venafi"
+      version = ">= 0.20.0"
     }
   }
 }
