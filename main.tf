@@ -11,17 +11,7 @@ resource "google_logging_metric" "xds_error_logs_alerts" {
   filter = <<EOT
 resource.type="k8s_container" 
 AND severity=("ERROR" OR "INFO") 
-AND (
-  textPayload:"FLEX-10001" OR
-  textPayload:"FD-40009" OR
-  textPayload:"FD-40010" OR
-  textPayload:"FD-40011" OR
-  textPayload:"FD-40012" OR
-  textPayload:"FD-40013" OR
-  textPayload:"FD-40014" OR
-  textPayload:"FD-40015" OR
-  textPayload:"FD-40016" OR
-  textPayload:"FD-40017" OR
+AND (  
   textPayload:"RD10001" OR
   textPayload:"RD10014" OR
   textPayload:"RD10015" OR
