@@ -430,7 +430,29 @@ user_labels ={}
 }
 
 # ===============================
-# Flink Alert Policy
+# Log-Based Metric: Flink Logs
+# ===============================
+
+resource "google_logging_metric" "flink_log_alert_metric" {
+  name        = "Flink_Log_Errors"
+  description = "Tracks Flink job error logs"
+  project     = var.project_id
+
+  filter = <<EOT
+resource.type="k8s_container"
+AND severity="ERROR"
+AND logName:"flink"
+EOT
+
+  metric_descriptor {
+    metric_kind = "DELTA"
+    value_type  = "INT64"
+    unit        = "1"
+  }
+}
+
+# ===============================
+# Alert Policy: Flink Log Errors
 # ===============================
 
 resource "google_monitoring_alert_policy" "flink_log_alert_policy" {
